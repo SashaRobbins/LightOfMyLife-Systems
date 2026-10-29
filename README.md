@@ -33,6 +33,8 @@ My Portfolio of other projects [Portfolio](https://sasharobbins.github.io)
 - Organizes entries with titles that have numerical prefixes to keep similar notes ordered regardless of pickup sequence.
 - Two systems merged into one overall manager, a journal system that gets updated with world interactions and exploration that gives more backstory to the game. Notes are physical world pickups that mostly give directional hints for game progression.
 
+<h2> Notes </h2>
+
 **Disclaimer:** These scripts have been extracted directly from a full-scale Unity project. They are provided here as architectural and code-quality samples for review purposes and are not intended to compile or run standalone outside of their broader project dependencies (such as custom UI prefabs, ScriptableObjects, and Input Action assets).
 
 Copyright (c) 2026 Sasha Robbins. All rights reserved. This repository is published for portfolio and viewing purposes only. Please don’t copy, modify, or redistribute the code without written permission.
