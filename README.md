@@ -4,31 +4,31 @@ Light of My Life is a narrative adventure game focussing on interactive explorat
 Playable Build: [Play on Itch.io](https://lightofmylife.itch.io/light-of-my-life)
 My Portfolio of other projects [Portfolio](https://sasharobbins.github.io)
 
-##Systems Overview
+##Systems Overview##
 
-###Save Manager
+###Save Manager###
 - Manages cross scene data persistence, manual and autosave slots, and player profile data (inventories, world states, dialogue choices, quest flags).
 - Runs as a singleton and uses JSON serialization with Player-Prefs to store player data across play sessions.
 - Uses asynchronous coroutines with validation guards in between scene loading.
 - Stores 3 individual save slots, with an autosave slot that updates with the current manual save slot.
 
-###Grid Inventory
+###Grid Inventory###
 - Resident Evil inspired, grid-based inventory and key-item management, item movement, rotation, and stacking.
 - Uses a 2D array matrix for spatial collision and boundary validation.
 - Integrates with Scriptable Objects for items, weapons, and recipe databases
 - Handles save-data instantiation, that either loads from save data, or reverts to a previous save state if the player respawns.
 
-###Interaction Controller
+###Interaction Controller###
 - Acts as a centralized controller for all world interactions (pickup, doors, dialogues, notes, maps, moveable objects).
 - Uses data driven design via a list of Interaction Entry structures, that are evaluated based on item requirements, bool/int dialogue variables, and event triggers.
 - Handles multi stage interactions that are sequenced from the outcome of previous interactions (A door that becomes unlocked when you obtain a key, and dialogue triggers based on the locked state).
 
-###Dialogue Manager
+###Dialogue Manager###
 - Processes branching conversations, typewriter text effects, choice evaluation, and PlayableDirector animations for cutscenes, using Cinemachine cameras for speaking character, or a point of interest.
 - Driven by Scriptable Object conversation nodes, that support conditional branching dialogue based on global game variables from previous conversation choices.
 - Multiple use cases in dialogue between characters, scene transitions, world event states such as locked doors / new areas of exploration.
 
-###Journal & Note Manager
+###Journal & Note Manager###
 - Manages collection, reading, and organizing narrative notes, stories, and journal entries.
 - Organizes entries with titles that have numerical prefixes to keep similar notes ordered regardless of pickup sequence.
 - Two systems merged into one overall manager, a journal system that gets updated with world interactions and exploration that gives more backstory to the game. Notes are physical world pickups that mostly give directional hints for game progression.
